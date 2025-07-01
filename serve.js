@@ -1,24 +1,23 @@
-// Importando módulo express
+// server.js
+
 const express = require('express');
-
-// Importando o controller de cursos
-const cursoController = require('./controllers/curso.controller');
-
-// Criando instância do Express
 const app = express();
 
-// Middleware para aceitar JSON no corpo das requisições
+// Middleware para interpretar JSON
 app.use(express.json());
 
-// Rotas
-app.get('/cursos', cursoController.listar);           // Listar cursos
-app.post('/cursos', cursoController.cadastrar);       // Cadastrar novo curso
-app.delete('/cursos/:id', cursoController.deletar);   // Deletar curso por ID
+// Importando rotas
+const alunoRoutes = require('./routes/alunoRoutes');
+const professorRoutes = require('./routes/professorRoutes');
 
-// Iniciando o servidor na porta 3000
+// Usando as rotas
+app.use('/alunos', alunoRoutes);
+app.use('/professores', professorRoutes);
+
+        // Iniciar servidor
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
-// Exportando o app para testes ou outros usos
+// Exportando o app para testes
 module.exports = app;       

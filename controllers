@@ -1,47 +1,25 @@
-// Simulação de um "banco de dados" em memória
-let cursos = [
-    { id: 1, nome: "Node.js Básico" },
-    { id: 2, nome: "Express Avançado" }
-];
+// controllers/curso.controller.js
 
-// Listar todos os cursos
 function listar(req, res) {
-    res.json(cursos);
+  res.send("Listando cursos...");
 }
 
-// Cadastrar um novo curso
-function cadastrar(req, res) {
-    const { nome } = req.body;
-
-    if (!nome) {
-        return res.status(400).json({ erro: "O campo 'nome' é obrigatório." });
-    }
-
-    const novoCurso = {
-        id: cursos.length + 1,
-        nome
-    };
-
-    cursos.push(novoCurso);
-    res.status(201).json(novoCurso);
+function criar(req, res) {
+  res.send("Criando curso...");
 }
 
-// Deletar um curso por ID
+function atualizar(req, res) {
+  res.send("Atualizando curso...");
+}
+
 function deletar(req, res) {
-    const id = parseInt(req.params.id);
-    const index = cursos.findIndex(curso => curso.id === id);
-
-    if (index === -1) {
-        return res.status(404).json({ erro: "Curso não encontrado." });
-    }
-
-    const cursoRemovido = cursos.splice(index, 1);
-    res.json({ mensagem: "Curso deletado com sucesso", curso: cursoRemovido[0] });
+  res.send("Deletando curso...");
 }
 
-// Exportando os controladores
 module.exports = {
-    listar,
-    cadastrar,
-    deletar
+  listar,
+  criar,
+  atualizar,
+  deletar
 };
+// controllers/professor.controller.js      s

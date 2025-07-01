@@ -1,19 +1,25 @@
- // controllers/cursoController.js
+// controllers/aluno.controller.js
 
 function listar(req, res) {
-    res.send('Controller responsável pela listagem');
+    res.send("Listando alunos...");
 }
 
-function cadastrar(req, res) {
-    res.send('Controller responsável pelo cadastro');
+function criar(req, res) {
+    res.send("Criando aluno...");
+}
+
+function atualizar(req, res) {
+    res.send("Atualizando aluno...");
 }
 
 function deletar(req, res) {
-    res.send('Função responsável por deletar o curso');
+    res.send("Deletando aluno...");
 }
 
-module.exports = {   
+module.exports = {
     listar,
-    cadastrar,
+    criar,
+    atualizar,
     deletar
 };
+// controllers/curso.controller.js      

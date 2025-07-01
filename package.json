@@ -1,17 +1,21 @@
 {
-  "name": "mi-proyecto",
+  "name": "api-cursos",
   "version": "1.0.0",
-  "description": "Una descripción corta de tu proyecto",
+  "description": "API simples para gerenciar cursos, alunos e professores",
+  "main": "src/server.js",
   "scripts": {
-  "main": "index.js",
-  
-  
-
-    "start": "nodemon src/server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
-  "keywords": ["node", "ejemplo", "package"],
-  "author": "Tu Nombre",
+  "keywords": [
+    "node",
+    "express",
+    "api",
+    "mvc"
+  ],
+  "author": "Seu Nome",
   "license": "MIT",
+  "type": "commonjs",
   "dependencies": {
     "express": "^4.18.2"
   },
